@@ -14,4 +14,4 @@ if [ ! -f /home/gitlab-runner/.runned ]; then
    echo "shell") | gitlab-ci-multi-runner register
 fi
 
-gitlab-ci-multi-runner --user=gitlab-runner --working-directory=/home/gitlab-runner
+gitlab-ci-multi-runner --user=root --working-directory=/home/gitlab-runner
