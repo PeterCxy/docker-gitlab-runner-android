@@ -21,10 +21,12 @@ RUN echo 'nobody ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # Install gitlab-runner
 WORKDIR /tmp/builder
 RUN git clone https://aur.archlinux.org/gitlab-ci-multi-runner.git && \
+  chmod -R 777 gitlab-ci-multi-runner && \
   cd gitlab-ci-multi-runner && sudo -u nobody makepkg -sci --noconfirm
 
 # Install Android SDK components
 RUN git clone https://aur.archlinux.org/android-sdk.git && \
+  chmod -R 777 android-sdk && \
   cd android-sdk && sudo -u nobody makepkg -sci --noconfirm
 
 # Install Android repositories
