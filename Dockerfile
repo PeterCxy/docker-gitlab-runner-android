@@ -46,8 +46,9 @@ RUN rm -rf /tmp/builder/*
 
 # Change WORKDIR and install the script
 WORKDIR /usr/local
-COPY run.sh /usr/local
+COPY run.sh /usr/local/
 RUN chmod +x run.sh
+RUN mkdir -p /home/gitlab-runner
 
 # Finished!
 CMD ['./run.sh']
