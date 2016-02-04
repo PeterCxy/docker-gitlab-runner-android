@@ -19,4 +19,4 @@ if [ ! -f /home/gitlab-runner/.runned ]; then
    touch /home/gitlab-runner/.runned
 fi
 
-gitlab-ci-multi-runner --user=root --working-directory=/home/gitlab-runner run
+gitlab-ci-multi-runner run --working-directory=/home/gitlab-runner
