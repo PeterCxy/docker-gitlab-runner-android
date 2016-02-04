@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export ANDROID_HOME=/opt/android-sdk
+
 if [ ! -f /home/gitlab-runner/.runned ]; then
   # First run!
   # We have to register to the CI now.
