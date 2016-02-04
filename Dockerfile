@@ -20,6 +20,9 @@ RUN echo 'nobody ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 # Install gitlab-runner
 WORKDIR /tmp/builder
+RUN git clone https://aur.archlinux.org/go-bindata.git && \
+  chomod -R 777 go-bindata && \
+  cd go-bindata && sudo -u nobody makepkg -sci --noconfirm
 RUN git clone https://aur.archlinux.org/gitlab-ci-multi-runner.git && \
   chmod -R 777 gitlab-ci-multi-runner && \
   cd gitlab-ci-multi-runner && sudo -u nobody makepkg -sci --noconfirm
