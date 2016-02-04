@@ -10,8 +10,13 @@ if [ ! -f /home/gitlab-runner/.runned ]; then
    echo "${GITLAB_CI_TOKEN}"
    sleep 2
    echo "${GITLAB_CI_DESC}"
-   sleep 10
-   echo "shell") | gitlab-ci-multi-runner register
+   sleep 2
+   echo "android,app"
+   sleep 5
+   echo "shell") | gitlab-ci-multi-runner register || die 'errored'
+
+   # Create the record
+   touch /home/gitlab-runner/.runned
 fi
 
-gitlab-ci-multi-runner --user=root --working-directory=/home/gitlab-runner
+gitlab-ci-multi-runner --user=root --working-directory=/home/gitlab-runner run
