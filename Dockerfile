@@ -7,7 +7,7 @@ FROM base/archlinux:2015.06.01
 RUN echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 
 # Use Rackspace's mirror
-RUN echo 'Server = http://mirror.rackspace.com/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+RUN echo -e 'Server = http://mirror.rackspace.com/archlinux/$repo/os/$arch\nServer = http://mirrors.kernel.org/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 
 # Do an update
 RUN pacman -Syyu --noconfirm
