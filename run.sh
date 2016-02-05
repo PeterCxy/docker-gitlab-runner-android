@@ -12,7 +12,7 @@ if [ ! -f /home/gitlab-runner/.runned ]; then
    sleep 2
    echo "${GITLAB_CI_DESC}"
    sleep 2
-   echo "android,app"
+   echo "${GITLAB_CI_TAGS}"
    sleep 5
    echo "shell") | gitlab-ci-multi-runner register || die 'errored'
   popd
