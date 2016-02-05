@@ -38,7 +38,7 @@ ENV PATH=${PATH}:${ANDROID_HOME}/tools
 
 # Install Android repositories
 RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | \
-  android update sdk --no-ui --filter android-21,android-22,android-23,build-tools-21.1.2,build-tools-23.0.2,extra-android-m2repository-25
+  android update sdk --no-ui --filter android-21,android-22,android-23,build-tools-21.1.2,build-tools-23.0.2,extra-android-m2repository --all
 
 # Uninstall sudo for security and clean up the directory
 RUN pacman -R --noconfirm sudo
